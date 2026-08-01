@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-labelledby="title description">
+  <title id="title">GitHub Project Publisher</title>
+  <desc id="description">A publication preflight for GitHub repositories.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071426"/>
+      <stop offset="55%" stop-color="#0f2f4d"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="520" fill="url(#background)"/>
+  <circle cx="1320" cy="82" r="180" fill="#38bdf8" fill-opacity=".20" filter="url(#glow)"/>
+  <circle cx="1480" cy="400" r="230" fill="#2dd4bf" fill-opacity=".18" filter="url(#glow)"/>
+  <path d="M0 406 C330 340 660 502 1000 418 S1370 332 1600 408 V520 H0Z" fill="#020617" fill-opacity=".22"/>
+  <g transform="translate(132 112)">
+    <rect width="70" height="70" rx="18" fill="#2dd4bf"/>
+    <path d="M35 16 52 24v13c0 12-7 22-17 27-10-5-17-15-17-27V24l17-8Zm0 13-7 3v7c0 6 3 12 7 15 4-3 7-9 7-15v-7l-7-3Z" fill="#062b33"/>
+  </g>
+  <text x="132" y="254" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="66" font-weight="700" letter-spacing="-2">GitHub Project Publisher</text>
+  <text x="136" y="316" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="27" letter-spacing=".5">A deterministic preflight for projects ready to be seen.</text>
+  <g transform="translate(136 370)">
+    <rect width="308" height="44" rx="22" fill="#ffffff" fill-opacity=".12" stroke="#ffffff" stroke-opacity=".18"/>
+    <circle cx="23" cy="22" r="6" fill="#5eead4"/>
+    <text x="42" y="29" fill="#ecfeff" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">AUDIT · CHECK · PUBLISH</text>
+  </g>
+</svg>

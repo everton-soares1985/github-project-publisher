@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="280" viewBox="0 0 760 280" role="img" aria-labelledby="title description">
+  <title id="title">Self-validation result</title>
+  <desc id="description">GitHub Project Publisher scored 100 percent ready with zero errors and zero warnings.</desc>
+  <rect width="760" height="280" rx="18" fill="#0f172a"/>
+  <rect x="1" y="1" width="758" height="278" rx="17" fill="none" stroke="#334155"/>
+  <circle cx="34" cy="34" r="7" fill="#fb7185"/>
+  <circle cx="58" cy="34" r="7" fill="#fbbf24"/>
+  <circle cx="82" cy="34" r="7" fill="#34d399"/>
+  <text x="112" y="40" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="15">project-publisher check .</text>
+  <line x1="24" y1="64" x2="736" y2="64" stroke="#334155"/>
+  <text x="40" y="112" fill="#5eead4" font-family="Cascadia Code, Consolas, monospace" font-size="17">✓ Git repository</text>
+  <text x="40" y="146" fill="#5eead4" font-family="Cascadia Code, Consolas, monospace" font-size="17">✓ Documentation, security, quality, presentation</text>
+  <text x="40" y="180" fill="#5eead4" font-family="Cascadia Code, Consolas, monospace" font-size="17">✓ Clean worktree · main · CI passed</text>
+  <rect x="40" y="208" width="680" height="1" fill="#334155"/>
+  <text x="40" y="248" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="700">READY</text>
+  <text x="180" y="248" fill="#5eead4" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="700">100%</text>
+  <text x="285" y="248" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="17">0 errors · 0 warnings</text>
+</svg>
