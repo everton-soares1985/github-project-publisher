@@ -21,6 +21,7 @@ from project_publisher.models import Finding
 from project_publisher.project_scanner import (
     current_branch,
     find_noise_directories,
+    is_ignored_by_git,
     is_git_repository,
     iter_project_files,
     worktree_changes,
@@ -217,10 +218,13 @@ def _repository_hygiene_findings(target: Path) -> list[Finding]:
         )
     )
 
-    noise_paths = find_noise_directories(target) + [
+    candidate_noise_paths = find_noise_directories(target) + [
         target / relative
         for relative in relative_files
         if relative.name in NOISE_FILE_NAMES or relative.suffix in NOISE_SUFFIXES
+    ]
+    noise_paths = [
+        path for path in candidate_noise_paths if not is_ignored_by_git(target, path)
     ]
     findings.append(
         Finding(

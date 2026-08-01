@@ -42,6 +42,21 @@ def worktree_changes(target: Path) -> list[str] | None:
     return output.splitlines() if output else []
 
 
+def is_ignored_by_git(target: Path, path: Path) -> bool:
+    """Return whether a path is already excluded by the repository's Git rules."""
+
+    relative_path = path.relative_to(target)
+    completed = subprocess.run(
+        ["git", "-C", str(target), "check-ignore", "-q", "--", str(relative_path)],
+        capture_output=True,
+        check=False,
+        encoding="utf-8",
+        errors="replace",
+        text=True,
+    )
+    return completed.returncode == 0
+
+
 def iter_project_files(target: Path) -> Iterator[Path]:
     """Yield relevant project files without descending into generated directories."""
 
