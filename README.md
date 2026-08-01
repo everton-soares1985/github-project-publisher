@@ -1,26 +1,64 @@
-# GitHub Project Publisher
+<p align="center">
+  <img src="assets/banner.svg" alt="GitHub Project Publisher — ship with confidence" width="100%">
+</p>
 
-> [Português — resumo do projeto](README.pt-BR.md)
+<p align="center">
+  <a href="https://github.com/everton-soares1985/github-project-publisher/actions/workflows/ci.yml"><img src="https://github.com/everton-soares1985/github-project-publisher/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
+  <img src="https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white" alt="Python 3.12">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-0E7490" alt="MIT license"></a>
+  <img src="https://img.shields.io/badge/Protocol-v0.1.0-1E293B" alt="Protocol version 0.1.0">
+</p>
 
-Prepare repositories for publication with repeatable checks for documentation, Git hygiene,
-security risks, project structure, and release readiness.
+<p align="center">
+  <strong>Audit and validate repositories before publishing them on GitHub.</strong><br>
+  A deterministic local preflight for documentation, Git hygiene, security, and release readiness.
+</p>
 
-## Why it exists
+<p align="center">
+  <a href="#quickstart">Quickstart</a> ·
+  <a href="#how-it-works">How it works</a> ·
+  <a href="#what-it-checks">Checks</a> ·
+  <a href="README.pt-BR.md">Português</a>
+</p>
+
+---
+
+## Ship with evidence, not assumptions
 
 Good projects are often published with missing documentation, uncommitted changes, accidental
-secrets, or unclear setup instructions. GitHub Project Publisher provides a deterministic local
-preflight before a repository is shared.
+secrets, or unclear setup instructions. GitHub Project Publisher gives you a transparent
+publication gate before a repository is shared.
 
-## MVP scope
+Version `0.1.0` is deliberately **read-only** for target repositories. It reports what needs
+attention; it never changes the inspected project.
 
-Version `0.1.0` is intentionally read-only for target repositories:
+| Command | Purpose | Result |
+| --- | --- | --- |
+| `project-publisher audit <path>` | Inspect a repository | Full report for review |
+| `project-publisher check <path>` | Run the publication gate | Exit code `0` only when ready |
 
-- `audit`: reports documentation, Git, security, and structure findings;
-- `check`: applies the publication gate and exits non-zero when the project is not ready;
-- terminal and JSON reports with a readiness score;
-- tests that prove the audit does not alter the target repository.
+## How it works
 
-Automatic changes through `apply` are a future phase and will require an explicit review flow.
+```mermaid
+flowchart LR
+    A[Repository] --> B[Audit]
+    B --> C{Findings}
+    C -->|Errors or warnings| D[Review and improve]
+    D --> B
+    C -->|Ready| E[Check]
+    E --> F[Publish with confidence]
+
+    classDef action fill:#0f766e,color:#ffffff,stroke:#0f766e;
+    classDef gate fill:#1e293b,color:#ffffff,stroke:#1e293b;
+    class B,E action;
+    class C gate;
+```
+
+<p align="center">
+  <img src="assets/self-validation.svg" alt="Self-validation result: 100 percent ready, zero errors and zero warnings" width="760">
+</p>
+
+<p align="center"><sub>Real self-validation result on <code>main</code>. See <a href="docs/pilot-validation.md">the pilot record</a>.</sub></p>
 
 ## Quickstart
 
@@ -28,31 +66,33 @@ Automatic changes through `apply` are a future phase and will require an explici
 python -m venv .venv
 .venv\Scripts\activate
 python -X utf8 -m pip install -e ".[dev]"
+
 project-publisher audit C:\path\to\repository
 project-publisher check C:\path\to\repository
 ```
 
-## Current checks
+Use `--json-output report.json` when a machine-readable report is needed.
 
-| Area | Examples |
+## What it checks
+
+| Area | Evidence collected |
 | --- | --- |
-| Git | repository, preferred branch, uncommitted changes |
+| Git hygiene | Git repository, preferred branch, uncommitted changes |
 | Documentation | README, license, changelog, contribution and security files |
-| Security | `.env`, private keys, likely credentials |
-| Quality | tests, oversized files, tracked runtime artifacts |
-| Presentation | `docs/`, screenshots folder, optional Portuguese summary |
+| Security | `.env`, private keys, and likely credentials without exposing values |
+| Quality | Python tests, oversized files, and unignored generated artifacts |
+| Presentation | `docs/`, screenshots folder, and optional Portuguese project digest |
+
+## Safety by design
+
+`audit` and `check` do not modify the target repository. A JSON file is written only when you
+explicitly provide `--json-output`. Any future `apply` mode must be designed around a separate
+review-and-approval step.
 
 ## Language policy
 
-Public projects use English as their primary language. A project may optionally provide a concise
-`README.pt-BR.md` for Portuguese-speaking readers without duplicating the complete technical
-documentation.
-
-## Safety
-
-`audit` and `check` never modify the target repository unless the user explicitly supplies a
-JSON report destination. Findings are evidence-based and are intended to be reviewed before any
-future apply mode exists.
+English is the canonical language for public documentation. Projects may include a concise
+[Portuguese digest](README.pt-BR.md) without duplicating the complete technical documentation.
 
 ## Development
 
