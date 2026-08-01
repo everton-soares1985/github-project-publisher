@@ -21,8 +21,8 @@ from project_publisher.models import Finding
 from project_publisher.project_scanner import (
     current_branch,
     find_noise_directories,
-    is_ignored_by_git,
     is_git_repository,
+    is_ignored_by_git,
     iter_project_files,
     worktree_changes,
 )
