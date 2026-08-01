@@ -1,0 +1,30 @@
+version: 0.1
+language:
+  primary: en
+  portuguese_summary:
+    enabled: optional
+    file: README.pt-BR.md
+    required_sections:
+      - O que é
+      - Qual problema resolve
+      - O que entrega
+      - Como usar
+      - Segurança
+publication:
+  preferred_branches:
+    - main
+  readiness:
+    minimum_score: 80
+    block_on_errors: true
+required_files:
+  - README.md
+  - LICENSE
+  - CHANGELOG.md
+  - CONTRIBUTING.md
+  - SECURITY.md
+  - AGENTS.md
+visual:
+  profile: editorial-minimal
+  badges_maximum: 5
+  diagrams: mermaid
+  screenshot_folder: screenshots
