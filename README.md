@@ -18,6 +18,7 @@
   <a href="#quickstart">Quickstart</a> ·
   <a href="#how-it-works">How it works</a> ·
   <a href="#what-it-checks">Checks</a> ·
+  <a href="#architecture">Architecture</a> ·
   <a href="README.pt-BR.md">Português</a>
 </p>
 
@@ -32,6 +33,15 @@ publication gate before a repository is shared.
 Version `0.1.0` is deliberately **read-only** for target repositories. It reports what needs
 attention; it never changes the inspected project.
 
+### ✨ Key Features
+
+- 🔍 **Deep repository scan** — Git state, documentation, security, quality, presentation
+- 🛡️ **Secret detection** — `.env`, private keys, credential patterns (never exposes values)
+- 📊 **Readiness score** — 0–100% publication confidence with weighted protocol
+- 🖥️ **Rich terminal output** — color-coded findings with Rich
+- 📄 **JSON export** — `--json-output` for CI pipelines and automation
+- 🔒 **Read-only by design** — never modifies the inspected project
+
 | Command | Purpose | Result |
 | --- | --- | --- |
 | `project-publisher audit <path>` | Inspect a repository | Full report for review |
@@ -40,13 +50,13 @@ attention; it never changes the inspected project.
 ## How it works
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[Repository] --> B[Audit]
     B --> C{Findings}
-    C -->|Errors or warnings| D[Review and improve]
+    C -->|Errors or warnings| D[Review & improve]
     D --> B
     C -->|Ready| E[Check]
-    E --> F[Publish with confidence]
+    E --> F[Ship confidently]
 
     classDef action fill:#0f766e,color:#ffffff,stroke:#0f766e;
     classDef gate fill:#1e293b,color:#ffffff,stroke:#1e293b;
@@ -73,6 +83,14 @@ project-publisher check C:\path\to\repository
 
 Use `--json-output report.json` when a machine-readable report is needed.
 
+### Example audit output
+
+<p align="center">
+  <img src="screenshots/audit-output.svg" alt="Example of a successful repository audit in the terminal" width="860">
+</p>
+
+<p align="center"><sub>Illustrative terminal output. Results vary according to the repository being audited.</sub></p>
+
 ## What it checks
 
 | Area | Evidence collected |
@@ -82,6 +100,26 @@ Use `--json-output report.json` when a machine-readable report is needed.
 | Security | `.env`, private keys, and likely credentials without exposing values |
 | Quality | Python tests, oversized files, and unignored generated artifacts |
 | Presentation | `docs/`, screenshots folder, and optional Portuguese project digest |
+
+## Architecture
+
+```mermaid
+graph TD
+    CLI[cli.py] --> AUDIT[audit.py]
+    AUDIT --> CHECKS[checks.py]
+    CHECKS --> CONFIG[configuration.py]
+    CHECKS --> SCANNER[project_scanner.py]
+    CHECKS --> MODELS[models.py]
+    SCANNER --> CONFIG
+    AUDIT --> MODELS[models.py]
+    CLI --> REPORT[report.py]
+    REPORT --> MODELS
+
+    classDef core fill:#0f766e,color:#fff,stroke:#0f766e;
+    classDef support fill:#1e293b,color:#fff,stroke:#1e293b;
+    class CLI,AUDIT core;
+    class CHECKS,CONFIG,SCANNER,REPORT,MODELS support;
+```
 
 ## Safety by design
 

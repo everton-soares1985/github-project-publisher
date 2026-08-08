@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="520" viewBox="0 0 860 520" role="img" aria-labelledby="title description">
+  <title id="title">Audit terminal output</title>
+  <desc id="description">Example terminal output showing the project-publisher audit command with a full results table.</desc>
+  <rect width="860" height="520" rx="14" fill="#0f172a"/>
+  <rect x="1" y="1" width="858" height="518" rx="13" fill="none" stroke="#334155"/>
+  <!-- Traffic lights -->
+  <circle cx="28" cy="26" r="7" fill="#fb7185"/>
+  <circle cx="52" cy="26" r="7" fill="#fbbf24"/>
+  <circle cx="76" cy="26" r="7" fill="#34d399"/>
+  <text x="106" y="32" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="14">project-publisher audit .</text>
+  <line x1="16" y1="50" x2="844" y2="50" stroke="#334155"/>
+
+  <!-- Panel -->
+  <rect x="24" y="66" width="812" height="82" rx="6" fill="none" stroke="#334155"/>
+  <text x="310" y="85" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">GitHub Project Publisher</text>
+  <text x="40" y="108" fill="#34d399" font-family="Cascadia Code, Consolas, monospace" font-size="15" font-weight="700">READY</text>
+  <text x="110" y="108" fill="#e2e8f0" font-family="Cascadia Code, Consolas, monospace" font-size="15">for publication</text>
+  <text x="40" y="130" fill="#e2e8f0" font-family="Cascadia Code, Consolas, monospace" font-size="14">Score: </text>
+  <text x="112" y="130" fill="#f8fafc" font-family="Cascadia Code, Consolas, monospace" font-size="14" font-weight="700">100%</text>
+  <text x="166" y="130" fill="#e2e8f0" font-family="Cascadia Code, Consolas, monospace" font-size="14"> | Errors: 0 | Warnings: 0</text>
+
+  <!-- Table header -->
+  <text x="40" y="178" fill="#f8fafc" font-family="Cascadia Code, Consolas, monospace" font-size="13" font-weight="700">Status</text>
+  <text x="140" y="178" fill="#f8fafc" font-family="Cascadia Code, Consolas, monospace" font-size="13" font-weight="700">Check</text>
+  <text x="480" y="178" fill="#f8fafc" font-family="Cascadia Code, Consolas, monospace" font-size="13" font-weight="700">Result</text>
+  <text x="798" y="178" fill="#f8fafc" font-family="Cascadia Code, Consolas, monospace" font-size="13" font-weight="700">Pts</text>
+  <line x1="32" y1="186" x2="828" y2="186" stroke="#334155"/>
+
+  <!-- Row 1 -->
+  <text x="40" y="206" fill="#34d399" font-family="Cascadia Code, Consolas, monospace" font-size="13">OK</text>
+  <text x="140" y="206" fill="#e2e8f0" font-family="Cascadia Code, Consolas, monospace" font-size="13">Git repository</text>
+  <text x="480" y="206" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">Git worktree detected.</text>
+  <text x="798" y="206" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">8/8</text>
+
+  <!-- Row 2 -->
+  <text x="40" y="228" fill="#34d399" font-family="Cascadia Code, Consolas, monospace" font-size="13">OK</text>
+  <text x="140" y="228" fill="#e2e8f0" font-family="Cascadia Code, Consolas, monospace" font-size="13">Publication branch</text>
+  <text x="480" y="228" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">Current branch is 'main'.</text>
+  <text x="798" y="228" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">5/5</text>
+
+  <!-- Row 3 -->
+  <text x="40" y="250" fill="#34d399" font-family="Cascadia Code, Consolas, monospace" font-size="13">OK</text>
+  <text x="140" y="250" fill="#e2e8f0" font-family="Cascadia Code, Consolas, monospace" font-size="13">Clean Git worktree</text>
+  <text x="480" y="250" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">No uncommitted files detected.</text>
+  <text x="798" y="250" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">8/8</text>
+
+  <!-- Row 4 -->
+  <text x="40" y="272" fill="#34d399" font-family="Cascadia Code, Consolas, monospace" font-size="13">OK</text>
+  <text x="140" y="272" fill="#e2e8f0" font-family="Cascadia Code, Consolas, monospace" font-size="13">Required file: README.md</text>
+  <text x="480" y="272" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">README.md found.</text>
+  <text x="790" y="272" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">10/10</text>
+
+  <!-- Row 5 -->
+  <text x="40" y="294" fill="#34d399" font-family="Cascadia Code, Consolas, monospace" font-size="13">OK</text>
+  <text x="140" y="294" fill="#e2e8f0" font-family="Cascadia Code, Consolas, monospace" font-size="13">Required file: LICENSE</text>
+  <text x="480" y="294" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">LICENSE found.</text>
+  <text x="798" y="294" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">8/8</text>
+
+  <!-- Row 6 -->
+  <text x="40" y="316" fill="#34d399" font-family="Cascadia Code, Consolas, monospace" font-size="13">OK</text>
+  <text x="140" y="316" fill="#e2e8f0" font-family="Cascadia Code, Consolas, monospace" font-size="13">Secrets protected</text>
+  <text x="480" y="316" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">.gitignore includes .env.</text>
+  <text x="798" y="316" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">5/5</text>
+
+  <!-- Row 7 -->
+  <text x="40" y="338" fill="#34d399" font-family="Cascadia Code, Consolas, monospace" font-size="13">OK</text>
+  <text x="140" y="338" fill="#e2e8f0" font-family="Cascadia Code, Consolas, monospace" font-size="13">Potential secret exposure</text>
+  <text x="480" y="338" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">No likely secret files detected.</text>
+  <text x="790" y="338" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">15/15</text>
+
+  <!-- Row 8 -->
+  <text x="40" y="360" fill="#34d399" font-family="Cascadia Code, Consolas, monospace" font-size="13">OK</text>
+  <text x="140" y="360" fill="#e2e8f0" font-family="Cascadia Code, Consolas, monospace" font-size="13">Automated tests</text>
+  <text x="480" y="360" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">Test files detected.</text>
+  <text x="798" y="360" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">5/5</text>
+
+  <line x1="32" y1="375" x2="828" y2="375" stroke="#334155"/>
+
+  <!-- Summary row -->
+  <text x="40" y="400" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">... and 8 more checks — all passed</text>
+
+  <!-- Footer -->
+  <line x1="32" y1="420" x2="828" y2="420" stroke="#334155"/>
+  <rect x="40" y="438" width="120" height="30" rx="6" fill="#0f766e"/>
+  <text x="60" y="458" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">✓ 100% READY</text>
+  <text x="180" y="458" fill="#94a3b8" font-family="Cascadia Code, Consolas, monospace" font-size="13">  0 errors · 0 warnings · 16 findings</text>
+
+  <!-- Cursor blink -->
+  <rect x="40" y="486" width="8" height="16" fill="#5eead4">
+    <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+</svg>

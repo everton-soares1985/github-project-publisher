@@ -12,8 +12,14 @@
     </filter>
   </defs>
   <rect width="1600" height="520" fill="url(#background)"/>
-  <circle cx="1320" cy="82" r="180" fill="#38bdf8" fill-opacity=".20" filter="url(#glow)"/>
-  <circle cx="1480" cy="400" r="230" fill="#2dd4bf" fill-opacity=".18" filter="url(#glow)"/>
+  <circle cx="1320" cy="82" r="180" fill="#38bdf8" fill-opacity=".20" filter="url(#glow)">
+    <animate attributeName="r" values="180;200;180" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="fill-opacity" values=".20;.28;.20" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1480" cy="400" r="230" fill="#2dd4bf" fill-opacity=".18" filter="url(#glow)">
+    <animate attributeName="r" values="230;250;230" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="fill-opacity" values=".18;.25;.18" dur="8s" repeatCount="indefinite"/>
+  </circle>
   <path d="M0 406 C330 340 660 502 1000 418 S1370 332 1600 408 V520 H0Z" fill="#020617" fill-opacity=".22"/>
   <g transform="translate(132 112)">
     <rect width="70" height="70" rx="18" fill="#2dd4bf"/>

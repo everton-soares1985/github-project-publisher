@@ -41,7 +41,7 @@ def test_check_returns_zero_for_ready_project(tmp_path: Path) -> None:
     result = CliRunner().invoke(app, ["check", str(_create_repository(tmp_path))])
 
     assert result.exit_code == 0
-    assert "PRONTO" in result.output
+    assert "READY" in result.output
 
 
 def test_check_returns_one_for_project_with_secret(tmp_path: Path) -> None:
@@ -51,7 +51,7 @@ def test_check_returns_one_for_project_with_secret(tmp_path: Path) -> None:
     result = CliRunner().invoke(app, ["check", str(repository)])
 
     assert result.exit_code == 1
-    assert "ERRO" in result.output
+    assert "ERROR" in result.output
 
 
 def test_audit_writes_json_only_when_requested(tmp_path: Path) -> None:

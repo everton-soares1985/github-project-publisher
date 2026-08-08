@@ -13,8 +13,8 @@ from project_publisher.models import AuditReport
 
 STATUS_LABELS = {
     "pass": "[green]OK[/green]",
-    "warning": "[yellow]ATENÇÃO[/yellow]",
-    "error": "[red]ERRO[/red]",
+    "warning": "[yellow]WARNING[/yellow]",
+    "error": "[red]ERROR[/red]",
     "info": "[cyan]INFO[/cyan]",
 }
 
@@ -22,22 +22,22 @@ STATUS_LABELS = {
 def render_terminal_report(report: AuditReport, console: Console) -> None:
     """Render a concise human-readable report."""
 
-    readiness = "PRONTO" if report.ready else "NÃO PRONTO"
+    readiness = "READY" if report.ready else "NOT READY"
     color = "green" if report.ready else "yellow" if not report.errors else "red"
     console.print(
         Panel.fit(
-            f"[{color}]{readiness}[/{color}] para publicação\n"
-            f"Nota: [bold]{report.score}%[/bold] | "
-            f"Erros: {len(report.errors)} | Atenções: {len(report.warnings)}\n"
-            f"Alvo: {report.target}",
+            f"[{color}]{readiness}[/{color}] for publication\n"
+            f"Score: [bold]{report.score}%[/bold] | "
+            f"Errors: {len(report.errors)} | Warnings: {len(report.warnings)}\n"
+            f"Target: {report.target}",
             title="GitHub Project Publisher",
         )
     )
     table = Table(show_header=True, header_style="bold")
     table.add_column("Status", no_wrap=True)
-    table.add_column("Verificação")
-    table.add_column("Resultado")
-    table.add_column("Pontos", justify="right", no_wrap=True)
+    table.add_column("Check")
+    table.add_column("Result")
+    table.add_column("Points", justify="right", no_wrap=True)
     for finding in report.findings:
         table.add_row(
             STATUS_LABELS[finding.status],

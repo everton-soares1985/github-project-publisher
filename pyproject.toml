@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "github-project-publisher"
 version = "0.1.0"
-description = "Audita e valida repositórios antes da publicação no GitHub."
+description = "Audit and validate repositories before publishing them on GitHub."
 readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "MIT" }
