@@ -83,6 +83,14 @@ project-publisher check C:\path\to\repository
 
 Use `--json-output report.json` when a machine-readable report is needed.
 
+### Codex skill
+
+The repository includes a reusable Codex skill with four scoped workflows: Maintenance,
+Bootstrap, Retrofit, and Release. Copy
+[`skills/growthtech-github-publisher`](skills/growthtech-github-publisher) into your Codex skills
+directory to install it. Maintenance is the safe default for routine fixes, commits, and pushes;
+it preserves existing visual assets unless a visual change is explicitly requested.
+
 ### Example audit output
 
 <p align="center">

@@ -7,3 +7,5 @@ All notable changes to this project are documented in this file.
 - Initial read-only audit and publication check MVP.
 - Added the repository visual system: SVG banner, live CI badge, Mermaid workflow, and a
   self-validation evidence card.
+- Added the reusable Codex skill with scoped Maintenance, Bootstrap, Retrofit, and Release
+  workflows to prevent unnecessary visual regeneration during routine updates.

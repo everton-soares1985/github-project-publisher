@@ -1,0 +1,4 @@
+interface:
+  display_name: "GrowthTech GitHub Publisher"
+  short_description: "Prepare repositories for safe GitHub publication"
+  default_prompt: "Use $growthtech-github-publisher to audit and prepare this repository for publication."
